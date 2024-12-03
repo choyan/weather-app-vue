@@ -6,12 +6,12 @@ import {
 } from "vue-router";
 
 import ProfileView from "../views/ProfileView.vue";
-import DashboarView from "../views/DashboardView.vue";
+import HomeView from "../views/HomeView.vue";
 import WeatherDetailsView from "../views/WeatherDetailsView.vue";
 import SearchView from "../views/SearchView.vue";
 
 const routes: Array<RouteRecordRaw> = [
-  { path: "/", component: DashboarView },
+  { path: "/", component: HomeView },
   {
     path: "/weather",
     name: "Weather",

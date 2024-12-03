@@ -63,32 +63,42 @@ const isDay = computed((): boolean => {
 
       <!-- Weather Cards -->
       <div class="space-y-4">
-        <!-- My Location Card -->
-        <div
-          class="text-white rounded-2xl p-6 bg-cover bg-center"
-          :class="[
-            !isDay
-              ? `bg-[url('/night-time.png')]`
-              : `bg-[url('/day-time.png')]`,
-          ]"
+        <RouterLink
+          :to="{
+            name: 'Weather',
+            query: {
+              lat: currentLocationWeather?.lat,
+              lon: currentLocationWeather?.lon,
+            },
+          }"
         >
-          <div class="flex justify-between items-start">
-            <div>
-              <h2 class="text-xl font-semibold mb-1">My Location</h2>
-              <p class="text-lg mb-3">{{ currentLocationWeather?.cityName }}</p>
-              <p class="text-lg">{{ currentLocationWeather?.description }}</p>
+          <div
+            class="text-white rounded-2xl p-6 bg-cover bg-center"
+            :class="[
+              !isDay
+                ? `bg-[url('/night-time.png')]`
+                : `bg-[url('/day-time.png')]`,
+            ]"
+          >
+            <div class="flex justify-between items-start">
+              <div>
+                <h2 class="text-xl font-semibold mb-1">My Location</h2>
+                <p class="text-lg mb-3">
+                  {{ currentLocationWeather?.cityName }}
+                </p>
+                <p class="text-lg">{{ currentLocationWeather?.description }}</p>
+              </div>
+              <div class="text-5xl font-light">
+                {{ currentLocationWeather?.temperature.current }}°
+              </div>
             </div>
-            <div class="text-5xl font-light">
-              {{ currentLocationWeather?.temperature.current }}°
+            <div class="mt-4 text-sm">
+              H:{{ currentLocationWeather?.temperature.max }}° L:{{
+                currentLocationWeather?.temperature.min
+              }}°
             </div>
           </div>
-          <div class="mt-4 text-sm">
-            H:{{ currentLocationWeather?.temperature.max }}° L:{{
-              currentLocationWeather?.temperature.min
-            }}°
-          </div>
-        </div>
-
+        </RouterLink>
         <div
           v-for="location in locationStore.favoriteLocations"
           :key="location.id"
