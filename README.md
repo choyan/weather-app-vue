@@ -4,6 +4,9 @@ The project has been scaffolded with Vite.js. For development environment we are
 
 The live demo is available here: https://weather-app-vue-self.vercel.app/
 
+https://github.com/user-attachments/assets/66f0e1c1-f7be-496a-8f5e-838c8fa405ce
+
+
 ## Installation and Setup
 
 ### Install dependencies
