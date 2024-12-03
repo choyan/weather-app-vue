@@ -1,6 +1,8 @@
 # Weather App
 
-The project has been scaffolded with Vite.js.
+The project has been scaffolded with Vite.js. For development environment we are using TypeScript, ESLint and Prettier throughout the project.
+
+The live demo is available here: https://weather-app-vue-self.vercel.app/
 
 ## Installation and Setup
 
@@ -32,12 +34,12 @@ npm run preview
 
 ## Used external libraries:
 
-- `pinia` (State Management)
 - `TailwindCSS` (Styling)
 - `axios` (Data Fetching)
 - `@vueuse/core` (Helper Composition methods)
 - `countries-list` (Openweather country code to fullname helper methods)
 - `vue-router` (Route management)
 - `@steveyuowo/vue-hot-toast` (Toast notification)
+- `pinia` (Local State Management)
 - `@tanstack/vue-query` (Server state management)
 - `dayjs` (Date utility library)
