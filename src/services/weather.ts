@@ -27,7 +27,7 @@ const transformCurrentWeather = (data: WeatherApiResponse): CurrentWeather => ({
   cityName: data.name,
   country: data.sys.country,
   description: data.weather[0].description,
-  icon: `${import.meta.env.BASE_URL}/weather-icons/${data.weather[0].icon}.svg`,
+  icon: `/weather-icons/${data.weather[0].icon}.svg`,
 });
 
 export const fetchCurrentWeather = async (
@@ -69,7 +69,7 @@ export const fetchHourlyForecast = async (
     const data = response.data.list.map((item: WeatherApiResponse) => ({
       time: dayjs(item.dt * 1000).format("hh:mm A"),
       temperature: Math.round(item.main.temp),
-      icon: `${import.meta.env.BASE_URL}/weather-icons/${item.weather[0].icon}.svg`,
+      icon: `/weather-icons/${item.weather[0].icon}.svg`,
       description: item.weather[0].description,
     }));
     return data;
@@ -159,25 +159,25 @@ export const fetchAverageTemperature = async (
           day: 1,
           avgTemperature: calculateAverage(day1Temps),
           avgWeatherType: getMostFrequentWeather(day1Weather),
-          weatherIcon: `${import.meta.env.BASE_URL}/weather-icons/${getWeatherIcon(getMostFrequentWeather(day1Weather))}.svg`,
+          weatherIcon: `/weather-icons/${getWeatherIcon(getMostFrequentWeather(day1Weather))}.svg`,
         },
         {
           day: 2,
           avgTemperature: calculateAverage(day2Temps),
           avgWeatherType: getMostFrequentWeather(day2Weather),
-          weatherIcon: `${import.meta.env.BASE_URL}/weather-icons/${getWeatherIcon(getMostFrequentWeather(day2Weather))}.svg`,
+          weatherIcon: `/weather-icons/${getWeatherIcon(getMostFrequentWeather(day2Weather))}.svg`,
         },
         {
           day: 3,
           avgTemperature: calculateAverage(day3Temps),
           avgWeatherType: getMostFrequentWeather(day3Weather),
-          weatherIcon: `${import.meta.env.BASE_URL}/weather-icons/${getWeatherIcon(getMostFrequentWeather(day3Weather))}.svg`,
+          weatherIcon: `/weather-icons/${getWeatherIcon(getMostFrequentWeather(day3Weather))}.svg`,
         },
         {
           day: 4,
           avgTemperature: calculateAverage(day4Temps),
           avgWeatherType: getMostFrequentWeather(day4Weather),
-          weatherIcon: `${import.meta.env.BASE_URL}/weather-icons/${getWeatherIcon(getMostFrequentWeather(day4Weather))}.svg`,
+          weatherIcon: `/weather-icons/${getWeatherIcon(getMostFrequentWeather(day4Weather))}.svg`,
         },
       ];
 
